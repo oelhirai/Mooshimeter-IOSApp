@@ -46,7 +46,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     return YES;
 }
-							
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    // No need to send text atm
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Some Data"
+                                                                   message:@"Made it!"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:ok];
+    
+    
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+
+    return YES;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

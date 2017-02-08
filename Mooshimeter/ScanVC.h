@@ -29,6 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @property UITableView* tableView;
 @property UIButton* scanButton;
+@property UIButton* sendDataButton;
+
 
 @property (strong,atomic)  MooshimeterDeviceBase* active_meter;
 
