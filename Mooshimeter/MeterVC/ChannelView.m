@@ -120,6 +120,7 @@ static BOOL sound_is_on = NO;
 
 -(void)value_label_refresh:(MeterReading*)value {
     self.value_label.text = [value toString];
+    NSLog(@"LOGGING value_label_refresh VALUE = %@", self.value_label.text);
 }
 
 -(void) zero_button_press {

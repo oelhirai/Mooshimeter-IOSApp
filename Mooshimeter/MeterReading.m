@@ -32,7 +32,6 @@
         high += 3;
         self.format_mult *= 1000;
     }
-
     self.format = [NSString stringWithFormat:@"%%0%d.%df", high, self.n_digits-high];
     return self;
 }
@@ -45,14 +44,14 @@
             return self.units;
         }
 
-        static NSString* prefixes[] = {@"n",@"\u03bc",@"m",@"",@"k",@"M",@"G"};
+        static NSString* prefixes[] = {@"n",@"Ohm",@"m",@"",@"k",@"M",@"G"};
         float lval = self.value;
         if(fabs(lval) > 1.2*self.max) {
-            return @"OUT OF RANGE";
+            return @"OUT_OF_RANGE";
         }
         NSMutableString* rval = [[NSMutableString alloc] init];
         if(lval>=0) {
-            [rval appendString:@" "]; // Space for neg sign
+            [rval appendString:@""]; // Space for neg sign
         }
         [rval appendString:[NSString stringWithFormat:self.format, lval*self.format_mult]];
         [rval appendString:prefixes[self.format_prefix]];
